@@ -1,0 +1,93 @@
+CSS
+
+You have your HTML code in a folder, in that folder make another folder and name it styles, inside that make a style.css file
+to make css code work on html you need to apply CSS to your HTML document thus:
+paste <link href="styles/style.css" ref="stylesheet"> into your HTML head
+
+
+ANATOMY OF A CSS RULESET
+
+in:
+
+	p {
+	  color: red;
+	}
+
+SELECTOR
+the "p" is the selector, this could be a html class to control certain paragraphs etc.
+in this instance it takes all <p> elements to be styled upon
+
+DECLARATION
+it is a single rule like in this instance "color: red;" which determines 
+which of the elements properties you want to style
+
+PROPERTIES
+It is a way in which you can style an HTML element, in this instance it is the "color" property of the <p> elements
+
+PROPERTY VALUE
+It chooses one out of many possible appearances for a given property, in this instance it colors the paragraph "red"
+
+
+
+CSS RULESET RULES
+
+- apart from the SELECTOR, each ruleset must be wrapped in curly braces. {}
+- within each declaration, you must use a colon : to separate the PROPERTY from its value or values
+- within each ruleset, you must use a semicolon ; to separate eachh declaration from the next one
+
+to modify multiple PROPERTY VALUES in one ruleset, write them seperated by semicolons like this:
+
+	p {
+		color: red;
+		width: 500px;
+		border: 1px solid black;
+	}
+
+
+
+you can also select multiple SELECTORS and apply a single ruleset to all of them:
+
+	p, li, h1 {
+		color: red;
+	}
+
+
+
+DIFFERENT TYPES OF SELECTORS
+
+
+ELEMENT SELECTOR (sometimes called a tag or type selector)
+- All HTML elements of the specified type. 
+	(p selects <p>)
+
+ID SELECTOR
+- The element on the page with the specified ID. Every ID value should be unique on a given HTML page 
+	(#my-id selects 
+		<p id="my-id"> 
+		     or 
+		<a id="my-id">
+	)
+
+CLASS SELECTOR
+- The element(s) on the page with the specified class. Multiple instances of the same class can appear on the same page
+	(.my-class selects
+		<p class="my-class">
+		       and
+		<a class="my-class">
+	)
+
+ATTRIBUTE SELECTOR
+- The element(s) on the page with the specified attribute
+	(img[src] selects
+		<img src="myimage.png">
+		       but not
+		<img>
+	)
+
+PSEUDO CLASS SELECTOR
+- The specified element(s), but only when in the specified state. (for example, when a cursor hovers over a link)
+	(a:hover selects <a>, but only when the mouse pointer is hovering over the link)
+
+
+
+

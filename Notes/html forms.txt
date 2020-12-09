@@ -1,0 +1,43 @@
+HTML FORMS
+
+
+
+WEB FORMS:
+
+One of the main points of interaction between a user and a web site or application
+Forms allows users to enter data which is the generally sent to server for processing and storage or used on the client-side
+to immediately update the interface in some way
+
+
+
+THE FORM ELEMENT
+
+All forms start with a <form> element, like this:
+
+	<form action="/my-handling-form-page" method="POST">
+
+	</form>
+
+This element defines a form. It's a container element like a <section> or <footer> element.
+It supports some specific attributes, the standard is to always set atleast *action* and *method* attributes
+- The *action* attribute defines the location (URL) where the form's collected data should be sent
+- The *method* attribute defines which HTTP method to send the data with (usually get or post)
+
+
+
+INSIDE FORM ELEMENT
+
+Here are a few simple things to put inside a form element
+We want a form where you can say what your name, email and message is and then to send it
+
+First you want the <form> element and inside that you want <ul> elements to contain <li> elements where inside those you put
+your actual elements, we are using list since it will structure our code nicely and make styling easier.
+
+When making the elements for the text fields first you want a <label> form and structure it like this for name field:
+	<label for="name">Name:</label>
+We use the attribute FOR to take value from a later specified ID attribute on the <input> element that we discuss below,
+this is how you associate a form control with its label. When you have both id and the for elements specified as the same,
+when a person clicks on the <label> it makes them control the <input>
+
+When making the next element for the name label you want it to look like this:
+	<input type="text" id="name" name="user_name">

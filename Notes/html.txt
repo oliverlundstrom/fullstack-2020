@@ -1,0 +1,79 @@
+HTML
+
+
+
+ELEMENTS
+<p>Bruh<\p>
+the <p><\p>'s are tags that make the whole element a paragraph
+"bruh" is the content of the element, being only string this instance.
+
+
+<p class="bruh">bruh<\p>
+now this element has a class, and if we want to make changes to its style we can target it and others with the
+class "bruh" at the same time.
+
+
+
+NESTED ELEMENTS
+we can also nest elements
+by putting elements insinde elements like so:
+
+<p>im <strong> BRUHHING <\strong> right now <\p>
+
+this would make the "bruhhing" emphasized strongly.
+You do need to make sure that the elements are properly nested, this wont do:
+
+<p>im <strong> BRUHHING right now <\p> <\strong>
+
+
+
+EMPTY ELEMENTS
+Some elements have no content (or "bruh" in this instance) and are thus empty, like the <img> element
+
+<img src="link_here" alt="cool picture">
+
+this contains two attributes but there is no closing <\img> tag and no inner content. This is because
+the element doesnt have content so it doesnt need to close itself
+
+
+
+THE ANATOMY OF HTML DOCUMENTS
+
+first you need an 
+	<!DOCTYPE html> 
+because it makes sure that the document behaves correctly
+
+After that everything else is "content" inside a 
+	<html><\html> 
+element that wraps around everything
+
+This element acts as a container for all the stuff you want to include on the 
+HTML page that isn't the content you are showing to your page's viewers. 
+	<head></head>
+This includes things like keywords and a page description that you want to appear in search results, 
+CSS to style our content, character set declarations, and more.
+
+Then still inside the head element is usually
+	<meta charset="utf-8">
+which sets the character set to utf-8
+
+After that there is usually a
+	<title><\title>
+element which sets the title of your page aka the things you see on the chrome tab
+
+AFTER ALL THAT we get to the
+	<body><\body>
+element, which contains all the content that you want to show on your page.
+It could include a lot of different things.
+
+
+
+INSIDE <BODY><\BODY> ELEMENT
+<img src="link"> - displays an image from the link, could include an attribute to show text instead or hovering over it
+<h1><\h1> - displays headings which are basically main titles, chapter titles etc. has different styles <h1>-<h6>
+<p><\p> - displays paragraphs of text and is usually used to mark up text content
+<a><\a> - displays a link, you can put content as the text shown and use <a href="link"> to make it a link
+	Lists
+<ul><\ul> - displays an unordered list where the order does not matter
+<ol><\ol> - displays an ordered list where the order does matter
+<li><\li> - is put inside the ul or ol lists as elements of the list
