@@ -2,6 +2,8 @@ HTML FORMS
 
 
 
+
+
 WEB FORMS:
 
 One of the main points of interaction between a user and a web site or application
@@ -10,18 +12,19 @@ to immediately update the interface in some way
 
 
 
+
+
 THE FORM ELEMENT
 
 All forms start with a <form> element, like this:
-
 	<form action="/my-handling-form-page" method="POST">
-
 	</form>
-
 This element defines a form. It's a container element like a <section> or <footer> element.
 It supports some specific attributes, the standard is to always set atleast *action* and *method* attributes
 - The *action* attribute defines the location (URL) where the form's collected data should be sent
 - The *method* attribute defines which HTTP method to send the data with (usually get or post)
+
+
 
 
 
@@ -41,3 +44,34 @@ when a person clicks on the <label> it makes them control the <input>
 
 When making the next element for the name label you want it to look like this:
 	<input type="text" id="name" name="user_name">
+For the <input> element the most important attribute is the TYPE attribute. It defines how the <input> element appears and 
+behaves. 
+In this instance when we use "text" it represents a basic single-line text field that accepts any kind of text input, if you however would want a field to put an email address in, you could use:
+	<input type="email" id="mail" name="user_email">
+which only accepts well formed email addresses
+
+If you want your <input> to have text you can use the VALUE attribute for example like this:
+	<input type="text" value="text here">
+You could do this other way with <textarea> element like this
+	<textarea>
+	text here
+	</textarea>
+
+
+
+
+
+
+THE <BUTTON> ELEMENT
+
+
+We can then add a <button> element to let the user to send or "submit" their data
+this is done by adding a button like this:
+	<li class="button">
+		<button type="submit">Send your message</button>
+	</li>
+the submit attribute is used to make the button submit the forms data to the web page defined by the ACTION attribute of the 
+<form> element.
+This attribute can be also RESET which when pressed resets all the form widgets to their default value immediately
+Or BUTTON attribute which does... NOTHING!! It can be used to build custom buttons tho which you can define thier chosen
+functionality with JavaScript

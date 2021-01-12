@@ -1,0 +1,85 @@
+.test gives true or false
+.match gives matching characters
+
+[] is for making character classes, you can put these together to search for example a 2 letter word with one or more numbers behind it: /^[a-z][a-z]\d+$/
+
+/Hello/ tests for hello
+
+/[aeuioy]/ tests for vowels
+
+/bruh|bruh2/ tests for both
+
+//i ignores case
+//g finds more than first match
+
+/./ matches any one character
+
+/[a-z]/g matches all letters
+
+/[^aeiouy]/gi matches everything except vowels
+
+/s+/ would return [ss, ss] from mississippi so as /s/ would return [s, s, s, s]
++ basically matches character that appears one or more times
+
+/*/ matches characters that occur zero or more times 
+	/go*/ would give ["goooooo"] from "gooooooal" but a ["g"] from "gut feeling"
+	the * only effects the last letter it is next to so that that letter can occur zero or more times
+
+regex matches are by default greedy
+greedy match tries to find the longest possible part of a string that fits the regex pattern
+the alternative is called a lazy match (?) which finds the smallest possible string that satisfies the regex pattern
+	/t[a-z]*i/ gives ["titani"] from titanic but /t[a-z]*?i/ gives ["ti"] 
+
+? makes the previous element optional, for example above, the [a-z] is actually 0 or more because of the ?
+	and for other example you could check for different versions of words aka /favou?rite/ would check for both spellings of that word
+
+you can use ^ to find if the specified string is first in a string for example
+	/^Cal/ matches true with .test to "Cal and Ricky both like racing."
+
+and you can use $ to search for a match at the end of a string
+	/story$/ matches true with .test to "This is a never ending story"
+
+
+
+
+/\w/ is the same thing as /[A-Za-z0-9_]/ which means its just a shortcut to match all numbers, both case letters and _
+/\W/ is the opposite of /\w/ and means /[^A-Za-z0-9_]/
+
+/\d/ is the same as /[0-9]/ 
+and same as before /\D/ is the same as /[^0-9]/
+
+/\s/ looks for whitespace in a string, it also matches for carriage return, tab, form feed and new line characters.
+	would return [" ", " "] from "Whitespace. Whitespace everywhere!"
+and, who could have guessed it, /\S/ which is the opposite and matches to all non whitespace characters
+
+
+
+
+{} are used to specify the lower and upper amounts of specified character
+	for example, to match only the letter "a" appearing between 3 and 5 times in the string "ah", your regex would be /a{3,5}h/, 3 for the lower amount and 5 for the higher one
+
+you can leave one of the numbers out in the curly brackets to just set the lowest or highest amount wanted, for example: 
+/a{4,}h/ would only match with strings that have 4 or more "a"'s
+
+you can also just put one number in the curly brackets to only match with that specified number, for example:
+/a{4}h/ would only match with a string with 4 "a"'s
+
+
+
+
+lookaheads:
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/positive-and-negative-lookahead
+
+
+
+you can reuse patterns using \ and then some number, for example \2, this would give the second capture group or () and use it again.
+	for example, you have this "bruh, gaming, coding" when you use /(\w+)\s/ if you would be to add \1 there it would repeat bruh
+
+
+
+using capture groups to replace using the .replace() on a string inside the () there are two parameters, first one is the one you are searching for and the second one is the replacement.
+	For example: 	let wrongText = "The sky is silver.";
+			let silverRegex = /silver/;
+			wrongText.replace(silverRegex, "blue");
+			// Returns "The sky is blue."
+
