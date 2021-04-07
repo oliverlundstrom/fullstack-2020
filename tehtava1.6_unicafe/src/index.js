@@ -2,24 +2,38 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
 const DisplayRatings = (props) => (
-  <div>{props.name} {props.value}</div>
+  <table>
+    <tbody>
+    <tr>
+      <td>{props.name}</td><td>{props.value}</td>
+    </tr>
+    </tbody>
+  </table>
 )
-
 const Button = ({onClick, text}) => (
   <button onClick={onClick}>
     {text}
   </button>
 )
+
+const Statistic = (props) =>{
+  return(
+    <div>
+      <DisplayRatings name={props.name} value={props.value}/>
+    </div>
+  )
+}
+
 const Statistics = ({good, bad, neutral, average, all}) =>{
  if (all > 0) {
  return(
   <div>
-      <DisplayRatings value={good} name="good: "/>
-      <DisplayRatings value={neutral} name="neutral: "/>
-      <DisplayRatings value={bad} name="bad: "/>
-      <DisplayRatings value={good + neutral + bad} name="all: " />
-      <DisplayRatings value={average/all} name="average"/>
-      <DisplayRatings value={parseFloat((good/all) * 100)+"%"} name="positive"/>
+      <Statistic value={good} name="good: "/>
+      <Statistic value={neutral} name="neutral: "/>
+      <Statistic value={bad} name="bad: "/>
+      <Statistic value={good + neutral + bad} name="all: " />
+      <Statistic value={average/all} name="average"/>
+      <Statistic value={parseFloat((good/all) * 100)+"%"} name="positive"/>
   </div>
   )
   } else {
